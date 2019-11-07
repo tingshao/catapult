@@ -82,6 +82,13 @@ class BrowserFinderOptions(optparse.Values):
         upload_bucket=None)
 
     # Selection group
+    group = optparse.OptionGroup(parser, 'Which case to run')
+    group.add_option(
+        '--filter',
+        dest='case_filter',
+        default=".html",
+        help='A pattern defining cases to run')
+
     group = optparse.OptionGroup(parser, 'Which browser to use')
     group.add_option(
         '--browser',
